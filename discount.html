@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+ 
+<body>
+
+<h2>DONTHIREDDY LOKESHREDDY computes discount</h2>
+<form>
+    <label for="ford1_baseamount">Enter base amount</label>
+    <input type ="number" id="ford1_baseamount" name="ford1_baseamount" value=20> <br>
+
+    <label for="ford1_dicount">Enter the discount percentage</label>
+    <input type ="number" id="ford1_discount" name="ford1_dicount" value=10> <br>
+
+    <input type="button" onclick="discount()" value="Apply discount ">
+</form>
+
+
+
+<p id="result">This text will be replaced </p><br>
+<form>
+<input  type ="radio" id="ford1_times" name="ford1" value=times> 
+<label for="ford1_tmes">*</label><br>
+
+<input type ="radio" id="ford1_divide" name="ford1" value=divide> 
+<label for="ford1_divide">/</label><br>
+
+<input type ="radio" id="ford1_exponent" name="ford1" value="exponent"> 
+<label for="ford1_exponent">**</label><br>
+<input type="button" onclick="chooseOp()" value="Get the result">
+</form>
+<p id="results"></p>
+
+<script> 
+
+function discount(){
+    let baseValue=document.getElementById("ford1_baseamount").value;
+    console.log(baseValue);
+    let discount=document.getElementById("ford1_discount").value;
+    let result="";
+    base=baseValue-(baseValue*discount/100);
+    for(i=1;i<=5;i++)
+    {
+        
+        result+=base*i+"  ";
+    }
+    document.getElementById("result").innerHTML="Discounted amounts for base "+baseValue+" are "+result;
+
+    
+}
+function chooseOp()
+    {
+        let baseValue=document.getElementById("ford1_baseamount").value;
+        let result;
+    console.log(baseValue);
+    let discount=document.getElementById("ford1_discount").value;
+    if(document.getElementById("ford1_times").checked)
+    {
+        result=baseValue*discount;
+    }
+    else if(document.getElementById("ford1_divide").checked)
+    {
+        result=baseValue/discount;
+    }
+    else if(document.getElementById("ford1_exponent").checked)
+    {
+        result=baseValue ** discount;
+    }
+    document.getElementById("results").innerHTML="The Result is : "+result;
+          
+    }
+</script>
+
+
+</body>
+</html> 
