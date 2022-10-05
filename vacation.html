@@ -22,7 +22,37 @@
     <input type="button" onclick="selectVacation()" value="Select a vacation">
 </form>
 <br>
+<form>
+    <label for="ford1_city">Enter a city</label>
+    <input type="text" id="ford1_city" value="city">
+    <br>
+    <label for="ford1_price">Enter price</label>
+    <input type="text" id="ford1_price" value="price">
+    <br>
 
+    <input type="button" onclick="updateVacation()" value="Update the vacation">
+</form>
+
+<p id="result"></p>
+
+<script> 
+let my_vacation={}
+function selectVacation (){
+    let travel=document.getElementById("ford1_travel").checked;
+    let domestics=document.getElementById("ford1_domestic").checked;
+    let resorts=document.getElementById("ford1_resort").checked;
+    my_vacation={"air":travel,"domestic":domestics,"resort":resorts};
+    console.log(my_vacation)
+    document.getElementById("result").innerHTML=JSON.stringify(my_vacation);
+}
+function updateVacation(){
+    let city=document.getElementById("ford1_city").value;
+    let price=document.getElementById("ford1_price").value;
+    my_vacation["city"]=city;
+    my_vacation["price"]=price;
+    document.getElementById("result").innerHTML="The Data is"+JSON.stringify(my_vacation)
+}
+</script>
 
 </body>
 </html> 
