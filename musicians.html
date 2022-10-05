@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>musician assignment</title>
+ </head>
+<body>
+
+<header>
+    musicians gess by Lokeshreddy Donthireddy
+</header>
+
+<form>
+    <label for="scr_musician">Enter the secret Musician name </label>
+    <input type ="password" id="scr_musician" name="secretName" min=10 max=50 step=2 value="Jhon Lennon"> <br>
+
+    <label for="gss_musician">Guess the Musician </label>
+    <input type ="text" id="gss_musician" name="guessMusician" autofocus> <br>
+
+    <input type="button" onclick="checkGuess()" value="Check the Guess">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<!--swapping images using java script-->
+<div class="container">
+    <img id="picture" src="1.jpg" height="100" weight="100" onclick="swapImage()">
+</div>
+<script>
+    var useImage=1
+    var img=document.getElementById("picture")
+    function swapImage(){
+        switch(useImage){
+            case 1:
+                img.src="2.jpg"
+                useImage++
+                break
+            case 2:
+                img.src="3.jpg"
+                useImage++
+                break
+            case 3:
+                img.src="1.jpg"
+                useImage=1
+                break
+            default:
+        }
+    }
+</script>
+
+
+
+</body>
+</html> 
